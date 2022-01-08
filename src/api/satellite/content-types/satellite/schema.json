@@ -8,14 +8,11 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "pluginOptions": {},
   "attributes": {
     "satellite_name": {
-      "type": "string"
-    },
-    "satellite_norad_id": {
       "type": "string"
     },
     "launched_date": {
@@ -25,6 +22,9 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::pass.pass"
+    },
+    "satellite_norad_id": {
+      "type": "integer"
     }
   }
 }
