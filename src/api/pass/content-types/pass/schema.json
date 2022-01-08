@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "passes",
+  "info": {
+    "singularName": "pass",
+    "pluralName": "passes",
+    "displayName": "Passes"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "start_utc": {
+      "type": "string"
+    },
+    "end_utc": {
+      "type": "string"
+    },
+    "start_azimuth": {
+      "type": "string"
+    },
+    "start_azimuth_compass": {
+      "type": "string"
+    },
+    "end_azimuth": {
+      "type": "string"
+    },
+    "end_azimuth_compass": {
+      "type": "string"
+    },
+    "duration": {
+      "type": "integer"
+    }
+  }
+}

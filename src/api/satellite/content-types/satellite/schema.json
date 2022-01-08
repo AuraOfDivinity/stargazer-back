@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "satellites",
+  "info": {
+    "singularName": "satellite",
+    "pluralName": "satellites",
+    "displayName": "Satellites",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "satellite_name": {
+      "type": "string"
+    },
+    "satellite_norad_id": {
+      "type": "string"
+    },
+    "launched_date": {
+      "type": "string"
+    },
+    "passes": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::pass.pass"
+    }
+  }
+}
