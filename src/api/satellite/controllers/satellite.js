@@ -25,6 +25,14 @@ module.exports = createCoreController('api::satellite.satellite', ({ strapi }) =
         }
     },
 
+    async getSubscribed(ctx) {
+        try {
+            return 'ok'
+        } catch (err) {
+            return err
+        }
+    },
+
     async subscribeToSatellite(ctx) {
         let user = ctx.state.user;
         const observer_lat = user.user_lat
