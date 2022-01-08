@@ -4,7 +4,8 @@
   "info": {
     "singularName": "pass",
     "pluralName": "passes",
-    "displayName": "Passes"
+    "displayName": "Passes",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true

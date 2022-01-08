@@ -67,6 +67,16 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::satellite.satellite"
+    },
+    "user_lat": {
+      "type": "float"
+    },
+    "user_long": {
+      "type": "float"
+    },
+    "user_alt": {
+      "type": "integer",
+      "default": 100
     }
   }
 }

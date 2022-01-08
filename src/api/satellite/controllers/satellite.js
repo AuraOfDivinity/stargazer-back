@@ -24,4 +24,14 @@ module.exports = createCoreController('api::satellite.satellite', ({ strapi }) =
             ctx.body = err;
         }
     },
+
+    async subscribeToSatellite(ctx) {
+        let user = ctx.state.user;
+
+        try {
+            return 'ok'
+        } catch (err) {
+            ctx.body = err;
+        }
+    }
 }));
