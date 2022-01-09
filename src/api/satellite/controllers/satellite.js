@@ -11,11 +11,15 @@ module.exports = createCoreController('api::satellite.satellite', ({ strapi }) =
     // Obtaining nearby satellites for the user from n2yo api
 
     async getSuggested(ctx) {
+        let user = ctx.state.user;
+        const observer_lat = user.user_lat
+        const observer_long = user.user_long
+        const observer_alt = user.user_alt
         try {
-            const { observer_lat, observer_long, observer_alt, search_radius, category_id } = ctx.query
+            const { search_radius, category_id } = ctx.query
             console.log(`lat: ${observer_lat} long:${observer_long} alt: ${observer_alt}, sr: ${search_radius}, ci: ${category_id}`)
 
-            const res = await axios.get(`${process.env.N2YO_BASE}/above/${observer_lat}/${observer_long}/${observer_alt}/${search_radius}/${category_id}
+            const res = await axios.get(`${process.env.N2YO_BASE}/above/${observer_lat}/${observer_long}/${observer_alt}/10/0
                 /?apiKey=${process.env.N2YO_KEY}`)
 
             return res.data
@@ -42,7 +46,7 @@ module.exports = createCoreController('api::satellite.satellite', ({ strapi }) =
         let user = ctx.state.user;
         const observer_lat = user.user_lat
         const observer_long = user.user_long
-        const observer_alt = user.user_lat
+        const observer_alt = user.user_alt
         const days = 10;
         const min_visibility = 10;
         const { norad_id } = ctx.query
