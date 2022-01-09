@@ -25,9 +25,14 @@ module.exports = createCoreController('api::satellite.satellite', ({ strapi }) =
         }
     },
 
-    async getSubscribed(ctx) {
+    async updateLocation(ctx) {
+        let user = ctx.state.user;
+        const { lat, long } = ctx.query
         try {
-            return 'ok'
+            let updatedUser = await strapi.db.query('plugin::users-permissions.user')
+                .update({ where: { id: user.id }, data: { user_lat: lat, user_long: long, user_alt: 100 } });
+
+            return updatedUser
         } catch (err) {
             return err
         }

@@ -13,9 +13,9 @@ module.exports = {
         },
 
         { // Path defined with a URL parameter
-            method: 'GET',
-            path: '/satellites/subscribed',
-            handler: 'satellite.getSubscribed',
+            method: 'POST',
+            path: '/satellites/updateLocation',
+            handler: 'satellite.updateLocation',
         },
     ]
 }
